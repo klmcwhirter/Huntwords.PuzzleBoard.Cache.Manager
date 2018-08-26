@@ -29,10 +29,9 @@ awk '
     $1="";
     printf("SET \"urn:puzzle:%s\" \"%s\"\r\n", key, $0);
 }
-END {
-    printf("DEL \"ids:Puzzle\"\r\n");
-    for(k in keys) {
-        printf("SADD \"ids:Puzzle\" \"%s\"\r\n", k);
-    }
-}
+#END {
+#    printf("DEL \"ids:Puzzle\"\r\n");
+#    for(k in keys) {
+#        printf("SADD \"ids:Puzzle\" \"%s\"\r\n", k);
+#    }
 '
